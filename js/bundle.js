@@ -1,3 +1,3 @@
-import { resizeCanvas } from './resizeCanvas.js';
+import { onResize } from './onResize/onResize.js';
 
-window.onload = window.onresize = resizeCanvas;
+window.onload = window.onresize = onResize;
