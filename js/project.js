@@ -1,5 +1,7 @@
+import { deepcopy } from './deepcopy.js';
+
 export function project(original) {
-    let points = (original) => original.map(point => Array.isArray(point) ? clone(point) : point);
+    let points = deepcopy(original);
 
     // 1D case
     if(points.length == 2){
@@ -8,8 +10,8 @@ export function project(original) {
     }
 
     // Project points into 2D space
-    while(points.length > 4){
-        for(const point in points){
+    while(points[0].length != 2){
+        for(const point of points){
             let scale = 1 / (2 - point.pop());
             for(let i = 0; i < point.length; i++){
                 point[i] *= scale;
