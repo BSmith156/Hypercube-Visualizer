@@ -1,4 +1,4 @@
-function Hypercube(dimension, rotations) {
+export function Hypercube(dimension, rotations) {
     this.setDimension(dimension);
     this.rotations = rotations;
 }
