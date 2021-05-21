@@ -16,7 +16,25 @@
         </nav>
         <div id="controls" class="form-group controls-container m-3 p-4">
             <label for="dimension">Dimension</label>
-            <input id="dimension" class="form-control" type="number" value="3" placeholder="Dimension" autocomplete="off" min="1">
+            <input id="dimension" class="form-control mb-1" type="number" value="3" placeholder="Dimension" autocomplete="off" min="1">
+            <button id="dimensionBtn" class="btn btn-primary mb-3" style="width: 100%">Change Dimension</button>
+            <label for="axis1">Rotation</label>
+            <select id="axis1" class="form-select controls-axis mb-1">
+                <option selected disabled>Axis 1</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <select id="axis2" class="form-select controls-axis mb-1">
+                <option selected disabled>Axis 2</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <input id="speed" class="form-control mb-1" type="number" placeholder="Speed" autocomplete="off" step=5>
+            <button id="addBtn" class="btn btn-primary mb-1" style="width: 100%">Add Rotation</button>
+            <button id="undoBtn" class="btn btn-primary mb-1" style="width: 100%">Undo Rotation</button>
+            <button id="clearBtn" class="btn btn-danger mb-1" style="width: 100%">Clear Rotations</button>
         </div>
         <canvas id="canvas" class="canvas m-3 ml-0"></canvas>
     </body>
