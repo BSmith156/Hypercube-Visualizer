@@ -19,6 +19,5 @@ export function project(original) {
 
         }
     }
-
     return points;
 }

@@ -14,7 +14,10 @@
                 </div>
             </div>
         </nav>
-        <div id="controls" class="controls-container m-3"></div>
+        <div id="controls" class="form-group controls-container m-3 p-4">
+            <label for="dimension">Dimension</label>
+            <input id="dimension" class="form-control" type="number" value="3" placeholder="Dimension" autocomplete="off" min="1">
+        </div>
         <canvas id="canvas" class="canvas m-3 ml-0"></canvas>
     </body>
     <script type="module" src="js/bundle.js"></script>

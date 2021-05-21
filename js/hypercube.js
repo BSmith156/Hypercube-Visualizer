@@ -1,15 +1,13 @@
 import { deepcopy } from './deepcopy.js';
 import { project } from './project.js';
-const scale = 1 / 1.5;
 
-export function Hypercube(dimension, rotations) {
+export function Hypercube(dimension) {
     this.setDimension(dimension);
-    this.setZoom();
-    this.rotations = rotations;
 }
 
 Hypercube.prototype.setDimension = function(dimension) {
     this.dimension = dimension;
+    this.setZoom();
 
     // Create vertices
     this.points = [[-0.5], [0.5]];
@@ -43,6 +41,12 @@ Hypercube.prototype.setDimension = function(dimension) {
             }
         }
     }
+
+    // Default rotation
+    this.rotations = [];
+    if(this.dimension > 2){
+        this.rotations.push([[0, 2], (25 / 30) * (Math.PI / 180)]);
+    }
 }
 
 Hypercube.prototype.rotate = function() {
@@ -58,8 +62,9 @@ Hypercube.prototype.rotate = function() {
 Hypercube.prototype.setZoom = function() {
     let canvas = document.getElementById("canvas");
     let smaller = (canvas.width < canvas.height) ? canvas.width : canvas.height;
-    this.zoom = (smaller / 4) / (0.5 * (scale ** (this.dimension - 2)));
-    if(this.dimension == 1){
-        this.zoom *= 2;
+    let point = 0.5;
+    for(let i = 2; i < this.dimension; i++){
+        point *= 1 / (2 - point);
     }
+    this.zoom = (smaller / 3) / point;
 }
