@@ -1,4 +1,4 @@
-const project = require("./project.js");
+import { project } from './project.js';
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.strokeStyle = "#FFFFFF";
