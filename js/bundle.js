@@ -5,8 +5,9 @@ const fps = 30;
 
 window.onload = () => {
     onResize();
-    let hypercube = new Hypercube(3, []);
+    let hypercube = new Hypercube(3, [[[0, 2], (25 / fps) * (Math.PI / 180)]]);
     setInterval(() => {
+        hypercube.rotate();
         draw(hypercube);
     }, 1000 / fps);
     window.onresize = () => {

@@ -45,6 +45,16 @@ Hypercube.prototype.setDimension = function(dimension) {
     }
 }
 
+Hypercube.prototype.rotate = function() {
+    for(const rotation of this.rotations){
+        for(const point of this.points){
+            let temp = (point[rotation[0][0]] * Math.cos(rotation[1])) + (point[rotation[0][1]] * Math.sin(rotation[1]));
+            point[rotation[0][1]] = (point[rotation[0][0]] * -Math.sin(rotation[1])) + (point[rotation[0][1]] * Math.cos(rotation[1]));
+            point[rotation[0][0]] = temp;
+        }
+    }
+}
+
 Hypercube.prototype.setZoom = function() {
     let canvas = document.getElementById("canvas");
     let smaller = (canvas.width < canvas.height) ? canvas.width : canvas.height;
