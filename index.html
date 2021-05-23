@@ -19,23 +19,33 @@
                 <label for="dimension">Dimension</label>
                 <input id="dimension" class="form-control mb-1" type="number" value="3" placeholder="Dimension" autocomplete="off" min="1">
                 <button id="dimensionBtn" class="btn btn-primary mb-3" style="width: 100%">Change Dimension</button>
-                <label for="axis1">Rotation</label>
-                <select id="axis1" class="form-select controls-axis mb-1">
+                <label for="axis1" style="display: block">Rotation</label>
+                <select id="axis1" class="form-select controls-axis mb-1" style="margin-right: 2%">
                     <option selected disabled>Axis 1</option>
                     <option value="1">1 (x-axis)</option>
                     <option value="2">2 (y-axis)</option>
                     <option value="3">3 (z-axis)</option>
-                </select>
-                <select id="axis2" class="form-select controls-axis mb-1">
+                </select><!--
+                --><select id="axis2" class="form-select controls-axis mb-1">
                     <option selected disabled>Axis 2</option>
                     <option value="1">1 (x-axis)</option>
                     <option value="2">2 (y-axis)</option>
                     <option value="3">3 (z-axis)</option>
                 </select>
                 <input id="speed" class="form-control mb-1" type="number" placeholder="Speed" autocomplete="off" step=5>
-                <button id="addBtn" class="btn btn-primary mb-1" style="width: 100%">Add Rotation</button>
-                <button id="undoBtn" class="btn btn-primary mb-1" style="width: 100%">Undo Rotation</button>
-                <button id="clearBtn" class="btn btn-danger mb-1" style="width: 100%">Clear Rotations</button>
+                <button id="addBtn" class="btn btn-primary mb-3" style="width: 100%" disabled>Add Rotation</button>
+                <table id="table" class="controls-table">
+                    <tr>
+                        <th>Axes</th>
+                        <th>Speed</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1, 3</td>
+                        <td>25</td>
+                        <td><button id="0,2" class="btn btn-danger" style="width: 100%">Remove</button></td>
+                    </tr>
+                </table>
             </span>
             <span id="help">
                 <h2 class="help-title mb-3">Welcome to Hypercube Visualizer!</h2>

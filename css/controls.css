@@ -8,3 +8,23 @@
     left: 0;
     overflow: auto;
 }
+
+.controls-axis {
+    display: inline-block;
+    width: 49%;
+}
+
+.controls-table {
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.controls-table tr td:first-of-type {
+    border-right: 2px solid grey;
+}
+
+.controls-table tr th:first-of-type {
+    border-right: 2px solid grey;
+}

@@ -45,7 +45,7 @@ Hypercube.prototype.setDimension = function(dimension) {
     // Default rotation
     this.rotations = [];
     if(this.dimension > 2){
-        this.rotations.push([[0, 2], (25 / 30) * (Math.PI / 180)]);
+        this.rotations.push([[0, 2], (25 / 30) * (Math.PI / 180), 25]);
     }
 }
 
