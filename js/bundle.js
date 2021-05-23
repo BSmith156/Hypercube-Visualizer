@@ -134,16 +134,18 @@ function updateTable() {
     let table = document.getElementById("table")
     table.innerHTML = "<tr><th>Axes</th><th>Speed</th><th></th></tr>";
     for(const rotation of hypercube.rotations){
-        table.innerHTML += "<tr><td>" + (rotation[0][0] + 1) + ", " + (rotation[0][1] + 1) + "</td><td>" + rotation[2] + "</td>" + '<td><button id="' + rotation[0][0] + "," + rotation[0][1] + '" class="btn btn-danger" style="width: 100%">Remove</button></td></tr>';
-        document.getElementById(rotation[0][0] + "," + rotation[0][1]).addEventListener("click", removeRotation);
+        table.innerHTML += "<tr><td>" + (rotation[0][0] + 1) + ", " + (rotation[0][1] + 1) + "</td><td>" + rotation[2] + "</td>" + '<td><button id="' + rotation[0][0] + "," + rotation[0][1] + '" class="btn btn-danger rotationButton" style="width: 100%">Remove</button></td></tr>';
     }
+    document.querySelectorAll('.rotationButton').forEach(button => {
+        button.addEventListener('click', removeRotation);
+    })
 }
 
 function removeRotation(e) {
     let val = e.target.id.split(",");
     for(let i = 0; i < hypercube.rotations.length; i++){
         if(hypercube.rotations[i][0][0] == val[0] && hypercube.rotations[i][0][1] == val[1]){
-            hypercube.rotations.pop(i)
+            hypercube.rotations.splice(i, 1)
             break;
         }
     }
