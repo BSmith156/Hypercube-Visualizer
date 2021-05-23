@@ -15,26 +15,35 @@
             </div>
         </nav>
         <div id="controls" class="form-group controls-container m-3 p-4">
-            <label for="dimension">Dimension</label>
-            <input id="dimension" class="form-control mb-1" type="number" value="3" placeholder="Dimension" autocomplete="off" min="1">
-            <button id="dimensionBtn" class="btn btn-primary mb-3" style="width: 100%">Change Dimension</button>
-            <label for="axis1">Rotation</label>
-            <select id="axis1" class="form-select controls-axis mb-1">
-                <option selected disabled>Axis 1</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <select id="axis2" class="form-select controls-axis mb-1">
-                <option selected disabled>Axis 2</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <input id="speed" class="form-control mb-1" type="number" placeholder="Speed" autocomplete="off" step=5>
-            <button id="addBtn" class="btn btn-primary mb-1" style="width: 100%">Add Rotation</button>
-            <button id="undoBtn" class="btn btn-primary mb-1" style="width: 100%">Undo Rotation</button>
-            <button id="clearBtn" class="btn btn-danger mb-1" style="width: 100%">Clear Rotations</button>
+            <span id="main" hidden>
+                <label for="dimension">Dimension</label>
+                <input id="dimension" class="form-control mb-1" type="number" value="3" placeholder="Dimension" autocomplete="off" min="1">
+                <button id="dimensionBtn" class="btn btn-primary mb-3" style="width: 100%">Change Dimension</button>
+                <label for="axis1">Rotation</label>
+                <select id="axis1" class="form-select controls-axis mb-1">
+                    <option selected disabled>Axis 1</option>
+                    <option value="1">1 (x-axis)</option>
+                    <option value="2">2 (y-axis)</option>
+                    <option value="3">3 (z-axis)</option>
+                </select>
+                <select id="axis2" class="form-select controls-axis mb-1">
+                    <option selected disabled>Axis 2</option>
+                    <option value="1">1 (x-axis)</option>
+                    <option value="2">2 (y-axis)</option>
+                    <option value="3">3 (z-axis)</option>
+                </select>
+                <input id="speed" class="form-control mb-1" type="number" placeholder="Speed" autocomplete="off" step=5>
+                <button id="addBtn" class="btn btn-primary mb-1" style="width: 100%">Add Rotation</button>
+                <button id="undoBtn" class="btn btn-primary mb-1" style="width: 100%">Undo Rotation</button>
+                <button id="clearBtn" class="btn btn-danger mb-1" style="width: 100%">Clear Rotations</button>
+            </span>
+            <span id="help">
+                <h2 class="help-title mb-3">Welcome to Hypercube Visualizer!</h2>
+                <p class="help-text">A tool to visualize <nobr>n-dimensional</nobr> hypercubes and rotate them in <nobr>n-dimensional</nobr> space.</p>
+                <p class="help-text">This short help section will guide you through all the features of the tool, feel free to skip it if you've already seen it before.</p>
+                <button id="helpNext" class="btn btn-primary mb-1" style="width: 100%">Next Page</button>
+                <button id="helpClose" class="btn btn-danger" style="width: 100%">Close</button>
+            </span>
         </div>
         <canvas id="canvas" class="canvas m-3 ml-0"></canvas>
     </body>
