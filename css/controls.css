@@ -1,29 +1,29 @@
-.controls-container {
-    border-radius: 5px;
-    background-color: #EBEBEC;
-    width: 20em;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    overflow: auto;
-}
-
 .controls-axis {
     display: inline-block;
     width: 49%;
 }
 
+.controls-container {
+    background-color: #EBEBEC;
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    width: 20em;
+}
+
 .controls-table {
+    border-collapse: collapse;
     table-layout: fixed;
     text-align: center;
     width: 100%;
-    border-collapse: collapse;
 }
 
 .controls-table tr td:first-of-type {
-    border-right: 2px solid grey;
+    border-right: 1px solid black;
 }
 
 .controls-table tr th:first-of-type {
-    border-right: 2px solid grey;
+    border-right: 1px solid black;
 }
