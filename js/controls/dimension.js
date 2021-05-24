@@ -17,10 +17,17 @@ export function setDimensionListeners(hc) {
     dimensionButton.addEventListener("click", (e) => {
         let value = dimensionInput.value;
         if(checkValid(value)){
-            hypercube.setDimension(Number.parseInt(value));
-            axisReset(hypercube);
-            updateTable(hypercube);
-            speedInput.value = null;
+            value = Number.parseInt(value);
+            if(value <= 10 || confirm("Dimensions above 10 may lag or crash the browser! Are you sure?")){
+                hypercube.setDimension(Number.parseInt(value));
+                axisReset(hypercube);
+                updateTable(hypercube);
+                speedInput.value = null;
+            } else {
+                dimensionInput.value = hypercube.dimension;
+            }
+        } else {
+            dimensionInput.value = hypercube.dimension;
         }
     });
 }
@@ -33,8 +40,9 @@ function checkValid(value) {
 // Handles enabling/disabling of dimension button
 function dimensionDisable() {
     let value = dimensionInput.value;
+    console.log(value);
     if(checkValid(value)){
-        dimensionInput.disabled = false;
+        dimensionButton.disabled = false;
     } else {
         dimensionButton.disabled = true;
     }
