@@ -1,11 +1,12 @@
+// Deepcopy an object
 export function deepcopy(original) {
-    let clone = [];
+    let copy = [];
     for(const item of original){
         if(Array.isArray(item)){
-            clone.push(deepcopy(item));
+            copy.push(deepcopy(item));
         } else {
-            clone.push(item);
+            copy.push(item);
         }
     }
-    return clone;
+    return copy;
 }

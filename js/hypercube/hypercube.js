@@ -1,10 +1,12 @@
-import { deepcopy } from './deepcopy.js';
+import { deepcopy } from '../helpers/deepcopy.js';
 import { project } from './project.js';
 
+// Create hypercube
 export function Hypercube(dimension) {
     this.setDimension(dimension);
 }
 
+// Set dimension of hypercube
 Hypercube.prototype.setDimension = function(dimension) {
     this.dimension = dimension;
     this.setZoom();
@@ -42,13 +44,14 @@ Hypercube.prototype.setDimension = function(dimension) {
         }
     }
 
-    // Default rotation
+    // Add default rotation
     this.rotations = [];
     if(this.dimension > 2){
         this.rotations.push([[0, 2], (25 / 30) * (Math.PI / 180), 25]);
     }
 }
 
+// Rotate hypercube
 Hypercube.prototype.rotate = function() {
     for(const rotation of this.rotations){
         for(const point of this.points){
@@ -59,6 +62,7 @@ Hypercube.prototype.rotate = function() {
     }
 }
 
+// Set hypercube zoom
 Hypercube.prototype.setZoom = function() {
     let canvas = document.getElementById("canvas");
     let smaller = (canvas.width < canvas.height) ? canvas.width : canvas.height;
